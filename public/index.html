@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Route Planner UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="intro">
+        <p class="mini">Navigation Demo</p>
+        <h1>Route Planner UI</h1>
+        <p class="intro-copy">A compact GPS-style planner using a real mini-city graph and Dijkstra pathfinding. Pick mode, preference, and constraints to generate practical route results.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">Vanilla JS</span>
+          <span class="tech-tag">Dijkstra Algorithm</span>
+        </div>
+      </section>
+
+      <section class="map-layout">
+        <form id="route-form" class="planner-card">
+          <h2>Plan Route</h2>
+          <label>
+            Start
+            <select name="start" id="start-select" required></select>
+          </label>
+          <label>
+            Destination
+            <select name="end" id="end-select" required></select>
+          </label>
+          <label>
+            Waypoints (optional)
+            <select name="waypoints" id="waypoint-select" multiple size="5"></select>
+          </label>
+          <p class="hint">Use Ctrl/Cmd + Click to select multiple waypoints.</p>
+
+          <label>
+            Travel mode
+            <select name="mode">
+              <option value="car">Car</option>
+              <option value="bike">Bike</option>
+              <option value="walk">Walk</option>
+            </select>
+          </label>
+
+          <label>
+            Route preference
+            <select name="preference">
+              <option value="fastest">Fastest</option>
+              <option value="shortest">Shortest</option>
+              <option value="scenic">Scenic</option>
+            </select>
+          </label>
+
+          <div class="toggles">
+            <label class="toggle"><input type="checkbox" name="avoidTolls" /> Avoid toll roads</label>
+            <label class="toggle"><input type="checkbox" name="avoidHighways" /> Avoid highways</label>
+            <label class="toggle"><input type="checkbox" name="optimizeWaypoints" checked /> Optimize waypoint order</label>
+          </div>
+
+          <div class="quick-actions">
+            <button type="button" class="ghost" data-scenario="commute">Try Commute</button>
+            <button type="button" class="ghost" data-scenario="city-tour">Try City Tour</button>
+          </div>
+
+          <button type="submit">Build Route</button>
+        </form>
+
+        <section class="map-card">
+          <div class="grid-overlay" aria-hidden="true"></div>
+          <svg id="network-map" class="network-map" viewBox="0 0 860 600" aria-label="Route map"></svg>
+          <div id="route-result" class="route-result" aria-live="polite"></div>
+        </section>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
