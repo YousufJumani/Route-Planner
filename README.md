@@ -3,6 +3,8 @@
 ## Overview
 A frontend GPS-style route planner built with a real mini-city graph and Dijkstra shortest-path routing.
 
+Demo:https://route-planner-sepia.vercel.app/
+
 This project is designed to look strong in screenshots while still being functionally meaningful:
 - interactive graph map with highlighted route
 - practical route controls (mode, preference, constraints)
@@ -40,16 +42,3 @@ Use these to show routing changes when toggling:
 - `npm test`
 - `npm run preview`
 
-Preview URL: `http://localhost:4175`
-
-## Deploy On Vercel
-1. Push this folder to GitHub.
-2. In Vercel, click `Add New...` -> `Project`.
-3. Import your repository.
-4. Set Root Directory to:
-   `projects/02-html-css-js-interactive-site/route-planner-ui`
-5. Build Command: `npm run build`
-6. Output Directory: `dist`
-7. Deploy.
-
-No environment variables are required.
