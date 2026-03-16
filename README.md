@@ -2,6 +2,7 @@
 
 ## Overview
 A frontend GPS-style route planner built with a real mini-city graph and Dijkstra shortest-path routing.
+<img width="1358" height="1078" alt="Untitled design (15)" src="https://github.com/user-attachments/assets/683deeb2-a1f5-4c2a-bd00-805c6f5b6e2d" />
 
 Demo:https://route-planner-sepia.vercel.app/
 
